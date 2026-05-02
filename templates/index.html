@@ -2,14 +2,57 @@
 <html>
 <head>
     <title>Image Upload System</title>
-</head>
-<body>
-    <h1>Welcome to Image Upload System 🚀</h1>
-    <p>Select an image and upload it</p>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 80px;
+            background-color: #f4f4f4;
+        }
 
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <button type="submit">Upload</button>
-    </form>
+        .box {
+            background: white;
+            padding: 30px;
+            width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input, button {
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>📤 Image Upload System</h1>
+        <p>Select an image and upload it</p>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <br>
+            <button type="submit">Upload Image</button>
+        </form>
+
+        <p style="margin-top:20px; color:gray;">
+            Built using Flask 🚀
+        </p>
+    </div>
+
 </body>
 </html>

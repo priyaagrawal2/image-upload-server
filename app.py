@@ -15,15 +15,15 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/upload", methods=["POST"])
+@app.route("/upload", methods=["GET", "POST"])
 def upload():
-    if "file" not in request.files:
-        return "No file selected"
+    if request.method == "GET":
+        return "Image Upload API is running. Please use the homepage form."
 
-    file = request.files["file"]
+    file = request.files.get("file")
 
-    if file.filename == "":
-        return "No file selected"
+    if not file or file.filename == "":
+        return "No file selected ❌"
 
     file_path = os.path.join(app.config["UPLOAD_FOLDER"], file.filename)
     file.save(file_path)
